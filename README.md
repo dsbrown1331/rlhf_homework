@@ -20,7 +20,7 @@ Now look through the code in ```vpg.py``` to get an idea of what is going on. We
 
 Run 
 ```
-python .\vpg.py --epochs 10 --checkpoint --checkpoint_dir ./synthetic --render
+python vpg.py --epochs 10 --checkpoint --checkpoint_dir ./synthetic --render
 ```
 
 This will generate 10 and save the RL policy after 10 checkpoints on the CartPole environment. It will render the first episode of each epoch so you can see its performance visually. We won't train the RL to convergence, but if you ran it for more than 10 checkpoints it would reach a reward of 200 (the true cartpole reward is +1 every time step that the cart stays on the track and the pole stays roughly upright). You can learn more about CartPole here: https://www.gymlibrary.dev/environments/classic_control/cart_pole/
@@ -48,7 +48,7 @@ This should save the learned reward function weights in a file called ```reward.
 Train RL policy on learned reward function
 
 ```
-python .\vpg.py --epochs 50 --checkpoint --reward reward.params --checkpoint_dir rlhf
+python vpg.py --epochs 50 --checkpoint --reward reward.params --checkpoint_dir rlhf
 ```
 
 This will run for 50 epochs and checkpoint after each epoch. You may need to run a little longer, but you should be able to get close to episode lengths of 200 which corresonds to optimal performance for this task.
@@ -57,14 +57,14 @@ Let's now evaluate the learned RLHF policy and compare with the performance of t
 
 Fill in appropriate checkpoint numbers (49 if you ran for 50 epochs)
 ```
-python .\rollout_policy.py --checkpoint .\rlhf\policy_checkpointXX.params --num_rollouts 5 --render
+python rollout_policy.py --checkpoint ./rlhf/policy_checkpointXX.params --num_rollouts 5 --render
 ```
 
 Report average performance.
 
 Evaluate best training checkpoint:
 ```
-python .\rollout_policy.py --checkpoint .\rlhf\policy_checkpoint9.params --num_rollouts 5 --render
+python rollout_policy.py --checkpoint ./rlhf/policy_checkpoint9.params --num_rollouts 5 --render
 ```
 
 Report the average performance.
