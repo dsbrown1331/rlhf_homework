@@ -9,7 +9,7 @@ You should be able to reuse the conda environmnent from Homework 1 and 2.
 
 ## Assignment
 
-You will need to code a neural network reward function in ```utils.py``` and code to train it ```offline_reward_learning.py```. 
+You will need fill in code for a neural network reward function in ```utils.py``` and write the code to train it ```offline_reward_learning.py```. I recommend looking back at HW1 and the Pytorch tutorial if you're unsure how to start.
 
 ## Part 1: Synthetic demonstration generation
 
