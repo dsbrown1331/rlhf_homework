@@ -64,7 +64,7 @@ Report average performance.
 
 Evaluate best training checkpoint:
 ```
-python rollout_policy.py --checkpoint ./rlhf/policy_checkpoint9.params --num_rollouts 5 --render
+python rollout_policy.py --checkpoint ./synthetic/policy_checkpoint9.params --num_rollouts 5 --render
 ```
 
 Report the average performance.
