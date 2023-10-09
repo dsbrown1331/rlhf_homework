@@ -45,7 +45,7 @@ def create_training_data(trajectories, cum_returns, num_pairs):
     num_trajs = len(trajectories)
 
     #add pairwise preferences over full trajectories
-    for n in range(num_trajs):
+    for n in range(num_pairs):
         ti = 0
         tj = 0
         #only add trajectories that are different returns
